@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Avisos</title>
+    <title>INGuitar | Guitarras</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="./dashboards.css">
@@ -26,66 +26,122 @@
 
         <div class="header-left">
 
-            <h1>AcquaTec</h1>
+            <h1><span style="color: #F4971E;">IN</span>Guitar</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
+            <div class="btn-nav">
+                <h3>Guitarras</h3>
+            </div>
+
             <div class="btn-nav-white">
                 <a href="cards.html">
-                    <h3>Aquários</h3>
+                    <h3>Médias</h3>
                 </a>
             </div>
 
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
+                    <h3>Gráfico</h3>
                 </a>
             </div>
 
-            <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
-            </div>
+
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
 
         </div>
-
-        <div class="dash-right">
-
-            <div class="avisos">
+        <div class="guitarras">
+            <div class="simulador">
                 <div class="container">
-                    <h1>Publicar um aviso</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                Título:
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <label>
-                                Descrição (máximo de 250 caracteres):
-                                <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                            </label>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <h1>Mural de Avisos</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
-                    </div>
+                    <h3>Gibson ES - 150</h3>
+                    <div class="imgtxt">
+                    <span class="texto">
+                       
+                        Em 1936, a Gibson que era a fábrica de violões até então, lança a Gibson ES-150, primeiro modelo
+                        de
+                        guitarra semi-acústica. Diferente dos violões acústicos existentes nessa época a Gibson ES-150
+                        tinha
+                        um som mais forte e alto devido ao sistema de captação. Isso, fez com que ela se tornasse
+                        extremamente
+                        popular entre as bandas de Jazz desse período, ocupando uma posição mais significativa dentro do
+                        conjunto de instrumentos.
+                    </span>
+                    <img src="../assets/imgs/simulador1.jpg" style="width: 163px; height: 163px;">
+                </div>
+                    <br>
+                    <b>Música tocada com Gibson ES - 150:</b>
+                    <br>
+                    <iframe style="border-radius:12px"
+                        src="https://open.spotify.com/embed/track/651OpXqL6blBV0KOswQ2yh?utm_source=generator&theme=0"
+                        width="100%" height="80" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                 </div>
             </div>
 
+            <div class="simulador2">
+                <div class="container2">
+                    <h3>Telecaster</h3>
+                    <div class="imgtxt">
 
+                        <span class="texto">
+                            Na década de 40 surge a FENDER e seus experimentos na construção de guitarras. Leo Fender
+                            (fundados da
+                            empresa)
+                            e Paul Bigsby (mecânico que mais tarde inventou a ponte com alavanca) desenvolveram um
+                            instrumento com
+                            corpo sólido em 1947.
+                            No ano seguinte uma guitarra com corpo sólido e 2 captadores começava a ser comercializada.
+                            Era a
+                            Broadcaster que depois ganhou o nome de Telecaster.
+                        </span>
+                        <img src="../assets/imgs/simulador2.jpg" style="width: 163px; height: 163px;">
+                        </div>
+                <br><br>
+                <b>Música tocada com Telecaster:</b>
+                <br><br>
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/track/04AJcjNnmmnOwUdbFUj5Hv?utm_source=generator&theme=0"
+                    width="100%" height="80" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
+            </div>
+        </div>
+            
+            <div class="simulador3">
+                <div class="container3">
+                    <h3>Gibson Les Paul</h3>
+                    <div class="imgtxt">
+                        
+                        <span class="texto">
+                            Nos anos 1950 a Gibson estava ficando para trás da Fender, pois ainda não havia produzido
+                        instruentos
+                        com corpo sólido. Após
+                        o lançamento da Telecaster (Fender) a Gibson voltou atrás aderindo ao projeto da LOG feita pelo
+                        guitarrista Les Paul.
+                        Ele aprimorou o projeto e um novo modelo de guitarra passou a ser fabricado. Lester William
+                        Polfus
+                        exigiu que a empresa colocasse
+                        o nome do modelo de LES PAUL, a Gibson aceitou e a primeira Gibson Les Paul foi lançada em 1952
+                        com o
+                        acabamento dourado, ficando conhecida como Gold Top
+                        </span>
+                        <img src="../assets/imgs/simulador3.jpg" style="width: 163px; height: 163px;">
+                    </div>
+                <br><br>
+                <b>Música tocada com Gibson Les Paul:</b>
+                <br><br>
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/track/7o2CTH4ctstm8TNelqjb51?utm_source=generator&theme=0"
+                    width="100%" height="80" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+            </div>
+        </div>
 
             <!-- MODAL -->
             <!-- <div id="div_modal" class="div-modal">
@@ -95,7 +151,7 @@
                     <button class="btn-fechar-modal" onclick="fecharModal()">X</button>
                 </div>
             </div> -->
-
+            
             <!-- AGUARDAR -->
             <!-- <div id="div_aguardar" class="div-aguardar">
                 <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
@@ -103,16 +159,16 @@
 
         </div>
     </div>
+    
 
 
-
-
+    
 </body>
 
 </html>
 
 <script>
-    
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {

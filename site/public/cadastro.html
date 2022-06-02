@@ -76,6 +76,18 @@
                     <span class="tipo_campo">Confirmação da Senha:</span>
                     <input id="confirmacao_senha_input" type="password" placeholder="******">
 
+                    <div class="math">
+                        <p id="valor1"></p>
+                        <p> + </p>
+                        <p id="valor2"></p>
+                        <p> = </p>
+
+
+                        <input class="input_cap" id="totalvalores_input" type="text" name="totalvalores" required="">
+                    </div>
+
+                    <p id="aviso"></p>
+
                     <button class="btn" onclick="cadastrar()">Cadastrar</button>
 
                 </div>
@@ -113,8 +125,9 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var totalvalores = totalvalores_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || totalvalores == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha os campos para prosseguir";
 
@@ -124,6 +137,18 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
+
+
+        var soma = valor1 + valor2
+
+        if (totalvalores != soma) {
+            alert(`reCaptcha inválido`);
+            return
+
+        } if (totalvalores == soma) {
+        }
+
+
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -150,7 +175,7 @@
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
-                
+
                 limparFormulario();
                 finalizarAguardar();
             } else {
@@ -167,5 +192,17 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+
+    var valor1 = Math.floor((Math.random() * 10) + 1);
+    var valor2 = Math.floor((Math.random() * 10) + 1);
+
+    document.getElementById("valor1").innerHTML = valor1;
+    document.getElementById("valor2").innerHTML = valor2;
+
+    document.getElementById("cadastrar").setAttribute("disabled", "");
+
+
+
+
 
 </script>

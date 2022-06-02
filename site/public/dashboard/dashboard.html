@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Dashboards</title>
+    <title>INGuitar | Dashboards</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="dashboards.css">
@@ -26,29 +26,31 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>AcquaTec</h1>
+            <h1><span style="color: #F4971E;">IN</span>Guitar</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
+            
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Guitarras</h3>
+                </a>
+            </div>
+
             <div class="btn-nav-white">
                 <a href="./cards.html">
-                    <h3>Aquários</h3>
+                    <h3>Médias</h3>
                 </a>
             </div>
 
             <div class="btn-nav">
 
-                <h3>Gráficos</h3>
+                <h3>Gráfico</h3>
 
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
@@ -59,9 +61,9 @@
         <div class="dash">
             <div class="btns-dash">
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Aquario 1</button>
-                <button class="btn-chart btn-white" onclick="obterDadosGrafico(2)">Aquario 2</button>
-                <button class="btn-chart btn-white" onclick="obterDadosGrafico(3)">Aquario 3</button>
+                <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Gibson ES-150</button>
+                <button class="btn-chart btn-white" onclick="obterDadosGrafico(2)">Telecaster</button>
+                <button class="btn-chart btn-white" onclick="obterDadosGrafico(3)">Gibson Les Paul</button>
                 <button class="btn-chart btn-white" onclick="obterDadosGrafico(4)">Aquario 4</button>
             </div>
             <div>
@@ -90,9 +92,9 @@
 
     verificar_autenticacao();
 
-    function alterarTitulo(idAquario) {
+    function alterarTitulo(idGuitarra) {
         var tituloAquario = document.getElementById("tituloAquario")
-        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
+        tituloAquario.innerHTML = "Últimos votos da <span style='color: #F4971E'>Guitarra " + idGuitarra + "</span>"
     }
 
     // O gráfico é construído com três funções:
@@ -106,20 +108,20 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function obterDadosGrafico(idAquario) {
-        alterarTitulo(idAquario)
+    function obterDadosGrafico(idGuitarra) {
+        alterarTitulo(idGuitarra)
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
 
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/ultimas/${idGuitarra}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    plotarGrafico(resposta, idAquario);
+                    plotarGrafico(resposta, idGuitarra);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -133,7 +135,7 @@
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, idAquario) {
+    function plotarGrafico(resposta, idGuitarra) {
         console.log('iniciando plotagem do gráfico...');
 
         var dados = {
@@ -209,7 +211,7 @@
             }
         });
 
-        setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+        setTimeout(() => atualizarGrafico(idGuitarra, dados), 2000);
     }
 
 
@@ -218,9 +220,9 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico(idAquario, dados) {
+    function atualizarGrafico(idGuitarra, dados) {
 
-        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/tempo-real/${idGuitarra}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
 
@@ -240,12 +242,12 @@
                     window.grafico_linha.update();
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idGuitarra, dados), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idGuitarra, dados), 2000);
             }
         })
             .catch(function (error) {

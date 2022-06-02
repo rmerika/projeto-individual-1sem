@@ -160,6 +160,12 @@ body {
 .card {
   display: flex;
   justify-content: space-around;
+  transition: all;
+  transition-duration: 1s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card h2 {
@@ -220,6 +226,19 @@ input {
   border-radius: 10px;
 }
 
+.math {
+  width: 200px;
+  height: 50px;
+  margin-left: 40px;
+  display: flex;
+}
+
+.input_cap{
+  width: 35px;
+  height: 20px;
+}
+
+
 .btn {
   font-family: "Barlow", sans-serif;
   border: 0;
@@ -268,7 +287,7 @@ input {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
+  border-right: 3px solid #F4971E;
   background-color: #212124;
   /* border: 3px solid pink; */
 }
@@ -284,7 +303,7 @@ input {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: white;
 }
 
 .hello {
@@ -294,7 +313,7 @@ input {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #F4971E;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -306,7 +325,7 @@ input {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: #F4971E;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -315,14 +334,14 @@ input {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid #F4971E;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #F4971E;
   padding: 0;
   margin: 0;
 }
@@ -337,7 +356,7 @@ input {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #F4971E;
   color: white;
   border-radius: 10px;
   text-align: center;
@@ -351,36 +370,44 @@ input {
   color: white;
   background-color: #212124;
   margin: 70px;
-  width: 700px;
+  width: 750px;
   height: 450px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   border-radius: 15px;
+  transition: all;
+  transition-duration: 1s;
 }
 
-.simulador .container {
-  flex-direction: column;
-  
-  text-align: justify;
-  
+.simulador:hover {
+  transform: scale(1.05);
+}
+
+.simulador .container{
+ justify-content: center;
+ flex-direction: column;
+ text-align: justify;
 }
 
 .simulador2 {
   color: white;
   background-color: #212124;
   margin: 70px;
-  width: 700px;
+  width: 750px;
   height: 450px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   border-radius: 15px;
+  transition: all;
+  transition-duration: 1s;
 
+}
+.simulador2:hover {
+  transform: scale(1.05);
 }
 
 .simulador2 .container2 {
-  flex-direction: column;
+ 
   margin: 70px;
   text-align: justify;
   
@@ -390,22 +417,49 @@ input {
   color: white;
   background-color: #212124;
   margin: 70px;
-  width: 700px;
+  width: 750px;
   height: 450px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   border-radius: 15px;
+  transition: all;
+  transition-duration: 1s;
 
+}
+.simulador3:hover {
+  transform: scale(1.05);
 }
 
 .simulador3 .container3 {
-  flex-direction: column;
+  flex-direction: line;
   margin: 70px;
   text-align: justify;
   
   
 }
+
+.guitarras {
+  flex-direction: column;
+  margin-left: 450px;
+}
+
+.texto {
+  width: 450px;
+  display: flex;
+}
+
+.imgtxt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.imgtxt img {
+  margin-left: 30px;
+  border-radius: 100px;
+  border: 2px solid white;
+}
+
 
 
 
