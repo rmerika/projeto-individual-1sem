@@ -2,7 +2,7 @@ var medidaModel = require("../models/medidaModel");
 
 function votar(req, res) {
 
-    const limite_linhas = 5;
+    const limite_linhas = 4;
 
     var idGuitarra = req.params.idGuitarra;
 
@@ -23,7 +23,7 @@ function votar(req, res) {
 
 function buscarUltimasMedidas(req, res) {
 
-    const limite_linhas = 5;
+    const limite_linhas = 4;
 
     var idGuitarra = req.params.idGuitarra;
 

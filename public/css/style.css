@@ -110,6 +110,7 @@ body {
 .social p {
   text-align: center;
   color: white;
+  text-align: justify;
 }
 
 .box {
@@ -126,6 +127,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 
@@ -365,7 +367,7 @@ input {
   cursor: pointer;
 }
 
-/* pagina extra - simulador */
+/* Guitarras*/
 .simulador {
   color: white;
   background-color: #212124;
@@ -434,8 +436,6 @@ input {
   flex-direction: line;
   margin: 70px;
   text-align: justify;
-  
-  
 }
 
 .guitarras {
@@ -444,11 +444,20 @@ input {
 }
 
 .texto {
-  width: 450px;
+  display: flex;
+}
+.texto2 {
   display: flex;
 }
 
 .imgtxt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imgtxt2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -460,6 +469,66 @@ input {
   border: 2px solid white;
 }
 
+.imgtxt2 img {
+  margin-left: 30px;
+  border-radius: 50px;
+ 
+}
+
+.simulador4 {
+  color: white;
+  background-color: #212124;
+  margin: 70px;
+  width: 750px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  transition: all;
+  transition-duration: 1s;
+
+}
+.simulador4:hover {
+  transform: scale(1.05);
+}
+
+.simulador4 .container4 {
+  flex-direction: line;
+  margin: 70px;
+  text-align: justify;
+}
+
+/* Sobre mim */
+
+.sobre {
+  color: white;
+  background-color: #212124;
+  margin: 100px;
+  width: 1150px;
+  height: 1200px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  transition: all;
+  transition-duration: 1s;
+}
+
+.sobre:hover {
+  transform: scale(1.05);
+}
+
+.sobre .container{
+ justify-content: center;
+ flex-direction: column;
+ text-align: justify;
+}
+.musicas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+
+}
 
 
 

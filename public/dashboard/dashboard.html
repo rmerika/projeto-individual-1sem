@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imgs/IN.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,15 +39,9 @@
                 </a>
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Médias</h3>
-                </a>
-            </div>
-
             <div class="btn-nav">
 
-                <h3>Gráfico</h3>
+                <h3>Vote aqui</h3>
 
             </div>
 
@@ -64,8 +58,7 @@
                 <button class="btn-chart btn-pink" onclick="votar(1)">Gibson ES-150</button>
                 <button class="btn-chart btn-white" onclick="votar(2)">Telecaster</button>
                 <button class="btn-chart btn-white" onclick="votar(3)">Gibson Les Paul</button>
-                <button class="btn-chart btn-white" onclick="votar(4)">Fender</button>
-                <button class="btn-chart btn-white" onclick="votar(5)">Stratocaster</button>
+                <button class="btn-chart btn-white" onclick="votar(4)">Stratocaster</button>
             </div>
             <div class="graph">
                 <canvas id="canvas_grafico"></canvas>
@@ -82,7 +75,7 @@
 
     let proximaAtualizacao;
 
-    window.onload = () => { obterDadosGrafico(1), obterDadosGrafico(2), obterDadosGrafico(3), obterDadosGrafico(4), obterDadosGrafico(5) } ;
+    window.onload = () => { obterDadosGrafico(1), obterDadosGrafico(2), obterDadosGrafico(3), obterDadosGrafico(4)} ;
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
@@ -173,7 +166,7 @@
                     yAxisID: 'y-id',
                     label: 'Quantidade',
                     borderColor: '#FFF',
-                    backgroundColor: '#32b9cd8f',
+                    backgroundColor: '#F4971E',
                     fill: true,
                     data: []
                 }
