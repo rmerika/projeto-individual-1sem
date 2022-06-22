@@ -102,6 +102,11 @@
         // if (proximaAtualizacao != undefined) {
         //     clearTimeout(proximaAtualizacao);
         // }
+
+        if (sessionStorage.ja_votou == 'Sim') {
+            alert ('Você só pode votar uma única vez!')
+            return
+        }
         
         console.log('Entrei na função votar');
 
@@ -110,7 +115,9 @@
         console.log('Entrei no fetch');
 
             if (response.ok) {
-                alert("Agradecemos seu voto, atualize a página!");
+                alert("Agradecemos seu voto!");
+                sessionStorage.ja_votou = 'Sim'
+        
                 obterDadosGrafico(idGuitarra);
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -166,7 +173,7 @@
                     yAxisID: 'y-id',
                     label: 'Quantidade',
                     borderColor: '#FFF',
-                    backgroundColor: '#F4971E',
+                    backgroundColor: ['#F4971E','#FDB15E','#F4971E','#FDB15E'],
                     fill: true,
                     data: []
                 }
